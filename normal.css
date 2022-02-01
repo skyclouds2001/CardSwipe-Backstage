@@ -1,5 +1,27 @@
+:root{
+    --theme-color-thin-blue: rgb(107, 168, 209);
+    --theme-color-thick-blue: rgb(0, 118, 255);
+    --theme-color-thin-grey: rgb(238, 233, 233);
+    --theme-color-thick-grey: rgb(164, 173, 179);
+    --theme-color-thin-pink: rgb(255, 236, 236);
+    --theme-color-strong-pink: rgb(248, 200, 200);
+}
+
 body {
     background-color: #ccc;
 
     margin: 0px;
+}
+
+.main {
+    background-color: #fff;
+
+    width: 30vw;
+    height: 90vh;
+    margin: 5vh auto;
+
+    min-width: 300px;
+    min-height: 500px;
+    max-width: 500px;
+    max-height: 750px;
 }
