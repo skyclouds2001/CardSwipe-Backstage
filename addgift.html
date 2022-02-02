@@ -8,15 +8,68 @@
 
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="normalize.css">
+    <link rel="stylesheet" href="./font/iconfont.css">
+
     <link rel="stylesheet" type="text/css" href="normal.css">
     <link rel="stylesheet" type="text/css" href="addgift.css">
 
     <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+
     <script type="text/javascript" src="addgift.js"></script>
 </head>
 
 <body>
-    <div class="main"></div>
+    <div class="main">
+
+        <!-- 导航条 -->
+        <div class="navigator">
+            <div class="selected" data-flag="0">批量添加</div>
+            <div class="" data-flag="1">单个导入</div>
+        </div>
+
+        <!-- 多礼物上传内容区 -->
+        <div class="double content" style="display: flex;">
+            <div class="iconfont icon-wenjianshangchuan
+            icon">
+            </div>
+            <div class="text">点击可上传文件</div>
+            <div class="button">
+                <button>确认</button>
+            </div>
+            <input type="file" id="fileUp">
+        </div>
+
+        <!-- 单礼物上传内容区 -->
+        <div class="single content" style="display: none;">
+            <form>
+                <div class="gift_name">
+                    <label for="gift_name">礼物名称</label>
+                    <input type="text" placeholder="" name="gift_name" id="gift_name">
+                </div>
+                <div class="gift_price">
+                    <label for="gift_price">价格区间</label>
+                    <input type="text" placeholder="" name="gift_price" id="gift_price">
+                </div>
+                <div class="gift_tags">
+                    <label for="gift_tags">礼物标签</label>
+                    <input type="text" placeholder="" name="gift_tags" id="gift_tags">
+                </div>
+                <div class="gift_source">
+                    <label for="gift_source">礼物获得途径</label>
+                    <input type="text" placeholder="" name="gift_source" id="gift_source">
+                </div>
+                <div class="gift_info">
+                    <label for="gift_info">礼物名称</label>
+                    <textarea name="gift_info" id="gift_info" placeholder="请输入内容" maxlength="1000" style="resize: none;"></textarea>
+                </div>
+                <div class="gift_img"></div>
+                <div class="button_update">
+                    <button>确认导入</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
 </body>
 
 </html>
