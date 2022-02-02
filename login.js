@@ -3,15 +3,6 @@ window.onload = function () {
         const ac = $('#ac').val();
         const pw = $('#pw').val();
 
-        // $.post('https://www.yangxiangrui.xyz:9092/gift/admin/login', {
-        //     username: String(ac),
-        //     password: String(pw),
-        //     id: 0
-        // }, (data,status) => {
-        //     console.log(data);
-        //     console.log(status);
-        // });
-
         let request = new XMLHttpRequest();
 
         request.onreadystatechange = function() {
