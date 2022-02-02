@@ -25,6 +25,8 @@ body {
     max-width: 500px;
     max-height: 750px;
 
+    box-sizing: border-box;
+
     transition: all 1s;
 }
 .main:hover {
