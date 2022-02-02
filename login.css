@@ -1,0 +1,67 @@
+/* 上部标题设置 */
+.title {
+    width: 100%;
+    height: 40%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* border-top: 1px solid #999; */
+    border-bottom: 1px solid #999;
+}
+.title > div {
+    width: 100%;
+    height: 75%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--theme-color-thin-blue);
+    font-size: 20px;
+}
+
+/* 下部表单设置 */
+.form {
+    width: 100%;
+    height: 60%;
+}
+.form > form {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 下部表单细节设置 */
+.account, .password, .button {
+    margin: 10px 0px;
+
+    font-size: 14px;
+}
+.button > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 10px;
+    color: white;
+
+    background-color: var(--theme-color-thin-blue);
+
+    border: 0px;
+    height: 3em;
+    width: 6em;
+
+    border-radius: 5px;
+
+    box-shadow: none;
+    transition: all 1s;
+}
+.button > button:hover {
+    box-shadow: 0px 0px 5px 5px var(--theme-color-thin-blue);
+}
