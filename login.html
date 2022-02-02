@@ -8,28 +8,38 @@
 
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="normalize.css">
+
     <link rel="stylesheet" type="text/css" href="normal.css">
     <link rel="stylesheet" type="text/css" href="login.css">
 
-    <script type="text/javascript"></script>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="login.js"></script>
 </head>
 
 <body>
     <div class="main">
 
+        <!-- 上部标题部分 -->
         <div class="title">
-            <div class="content">从心礼选后台管理系统</div>
+            <div>从心礼选后台管理系统</div>
         </div>
 
+        <!-- 下部表单部分 -->
         <div class="form">
             <form>
+                <!-- 账号 -->
                 <div class="account">
-                    <label for="">账号</label>
-                    <input type="text">
+                    <label for="ac">账号：</label>
+                    <input type="text" id="ac" placeholder="单行输入">
                 </div>
+                <!-- 密码 -->
                 <div class="password">
-                    <label for="">密码</label>
-                    <input type="text">
+                    <label for="pw">密码：</label>
+                    <input type="password" id="pw" placeholder="单行输入">
+                </div>
+                <!-- 按钮 -->
+                <div class="button">
+                    <button type="button">登录</button>
                 </div>
             </form>
         </div>
