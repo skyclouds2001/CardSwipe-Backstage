@@ -5,7 +5,7 @@
     justify-content: space-between;
     align-items: center;
 
-    padding: 50px 0px;
+    padding: 25px 0px;
 }
 
 /* 导航条 */
@@ -58,12 +58,18 @@
 .double > div {
     margin-top: 25px;
 }
+
 .icon {
     font-size: 200px;
 }
+input[type = "file"] {
+    display: none;
+}
+
 .text {
     font-size: 15px;
 }
+
 .button button {
     font-size: 14px;
     border-radius: 5px;
@@ -80,9 +86,7 @@
     background-color: var(--theme-color-thin-grey);
     color: black;
 }
-input[type = "file"] {
-    display: none;
-}
+
 
 /* 单礼物上传部分 */
 .single {
@@ -90,4 +94,72 @@ input[type = "file"] {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    font-size: 15px;
+}
+.single > form {
+    width: 100%;
+    height: 100%;
+}
+.single > form > div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    margin-top: 2.5%;
+}
+
+.single > form > div > input {
+    border: 1px solid #ccc;
+    border-radius: 2.5px;
+
+    font-size: 12px;
+    line-height: 2.5em;
+
+    width: 15em;
+    height: 2em;
+}
+.single > form > div > textarea {
+    border: 1px solid #ccc;
+    border-radius: 2.5px;
+
+    font-size: 12px;
+    line-height: 1.5em;
+
+    width: 15em;
+    height: 6em;
+}
+
+.gift_img {
+    justify-content: left !important;
+}
+.img_box, .info_box {
+    width: 100px;
+    height: 100px;
+    margin-left: 25px;
+
+    border-radius: 5px;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info_box {
+    border: 1px solid #ccc;
+}
+.img_box > img {
+    width: 100%;
+}
+
+.button_update > button {
+    background-color: var(--theme-color-thick-grey);
+    color: white;
+
+    width: 6em;
+    height: 2.5em;
+    border: none;
+
+    border-radius: 5px;
 }
