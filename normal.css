@@ -7,6 +7,12 @@
     --theme-color-strong-pink: rgb(248, 200, 200);
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
 body {
     background-color: #ccc;
 
