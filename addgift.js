@@ -137,7 +137,7 @@ window.onload = function() {
         // 获取表单各内容
         const obj = {
             buyurl: $('#gift_source').val(),
-            des: $('gift_info').val(),
+            des: $('#gift_info').val(),
             tag: $('#gift_tags').val(),
             title: $('#gift_name').val(),
             url: imgurl,
