@@ -118,6 +118,8 @@ input[type = "file"] {
 
     width: 15em;
     height: 2em;
+
+    outline: none;
 }
 .single > form > div > textarea {
     border: 1px solid #ccc;
@@ -128,6 +130,8 @@ input[type = "file"] {
 
     width: 15em;
     height: 6em;
+
+    outline: none;
 }
 
 .gift_img {
