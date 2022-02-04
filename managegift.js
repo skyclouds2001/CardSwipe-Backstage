@@ -108,7 +108,7 @@ window.onload = function () {
         $('.list-content button').on('click', function () {
             const {id} = this.dataset;
 
-            location.assign(STATE === 1 ? 'newgiftinfo.html' : 'oldgiftinfo.html' + `?id=${id}`);
+            location.assign(STATE === 1 ? `newgiftinfo.html?id=${id}` : `oldgiftinfo.html?id=${id}`);
         });
     }
 
