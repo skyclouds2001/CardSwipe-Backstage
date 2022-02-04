@@ -1,0 +1,75 @@
+/* 页面整体设置 */
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 页面名称及返回 */
+.page-title {
+    margin: 25px auto;
+    width: 90%;
+    height: auto;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex: 1;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.return-btn {
+    position: absolute;
+
+    left: 0px;
+}
+.return-btn > button {
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: white;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    width: 5em;
+    height: 2em;
+}
+
+/* 导航条 */
+.navigator {
+    flex: 2;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 90%;
+    height: auto;
+}
+.navigator > div {
+    width: 6em;
+    height: 3em;
+
+    background-color: var(--theme-color-thick-grey);
+
+    color: white;
+    line-height: 3em;
+    text-align: center;
+    font-size: 14px;
+
+    border-radius: 5px;
+}
+
+/* 问题内容区 */
+.content {
+    flex: 12;
+}
