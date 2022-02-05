@@ -21,6 +21,8 @@
 .nav-text {
     letter-spacing: 0.1em;
     font-size: 20px;
+
+    user-select: none;
 }
 .return-icon {
     position: absolute;
@@ -29,6 +31,8 @@
 
     font-weight: bold;
     font-size: 18px;
+
+    cursor: pointer;
 }
 
 /* 礼物内容 */
@@ -68,6 +72,10 @@
     text-align: center;
 }
 
+.gift-tag {
+    text-align: center;
+}
+
 .gift-des {
     font-size: 15px;
 }
@@ -82,7 +90,7 @@
 
     width: 80%;
     height: auto;
-    padding-bottom: 25px;
+    padding: 25px 0px;
 }
 
 .control > button {
