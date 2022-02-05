@@ -6,8 +6,6 @@ window.onload = function () {
         let request = new XMLHttpRequest();
 
         request.onreadystatechange = function() {
-            // console.log('status:', this.status);
-            // console.log('readyState:', this.readyState);
             if(this.readyState === 4) {
                 const res = JSON.parse(this.responseText);
                 if(res.success) {
