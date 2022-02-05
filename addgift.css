@@ -34,6 +34,9 @@
     align-items: center;
 
     height: 100%;
+
+    user-select: none;
+    cursor: pointer;
 }
 .selected {
     border: none;
@@ -61,6 +64,8 @@
 
 .icon {
     font-size: 200px;
+
+    cursor: pointer;
 }
 input[type = "file"] {
     display: none;
@@ -68,6 +73,8 @@ input[type = "file"] {
 
 .text {
     font-size: 15px;
+
+    user-select: none;
 }
 
 .button button {
@@ -107,6 +114,10 @@ input[type = "file"] {
     align-items: center;
 
     margin-top: 2.5%;
+}
+
+.single > form > div > label {
+    user-select: none;
 }
 
 .single > form > div > input {
@@ -149,12 +160,41 @@ input[type = "file"] {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    position: relative;
 }
+
 .info_box {
     border: 1px solid #ccc;
+
+    color: #ccc;
+    font-size: 100px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
 }
+
 .img_box > img {
     width: 100%;
+}
+
+#del-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    font-size: 35rpx;
+    line-height: 35rpx;
+    border-radius: 50%;
+
+    color: white;
+    background-color: #999;
+
+    cursor: pointer;
 }
 
 .button_update > button {
