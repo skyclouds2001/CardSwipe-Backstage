@@ -177,6 +177,8 @@ input[type = "file"] {
 .title {
     font-weight: bold;
     font-size: 20px;
+
+    user-select: none;
 }
 
 .return-btn {
@@ -195,4 +197,17 @@ input[type = "file"] {
 
     width: 5em;
     height: 2em;
+}
+
+
+/* 更新：2022/2/5 */
+.single > form > div > label {
+    cursor: default;
+    user-select: none;
+}
+.info_box {
+    cursor: pointer;
+}
+#del-img {
+    cursor: pointer;
 }
