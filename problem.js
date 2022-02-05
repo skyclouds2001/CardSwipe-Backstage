@@ -1,3 +1,5 @@
+"use strict";
+
 window.onload = function () {
     // 标记分页状态
     //     false代表未检查问题分页，true代表已检查问题分页

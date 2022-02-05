@@ -1,3 +1,5 @@
+"use strict";
+
 window.onload = function () {
     // 记录当前分页
     //      1代表新上传礼物（初始值）

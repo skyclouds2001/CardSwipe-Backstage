@@ -1,3 +1,5 @@
+"use strict";
+
 window.onload = function() {
     // 标记选择的内容，默认是false
     // false代表多选， true代表单选

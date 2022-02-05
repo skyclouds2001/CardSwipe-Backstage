@@ -1,3 +1,5 @@
+"use strict";
+
 window.onload = function () {
     $('.button > button').on('click', function() {
         const ac = $('#ac').val();
