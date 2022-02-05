@@ -18,8 +18,8 @@ window.onload = function () {
 
     // 查看按钮事件
     $('.check').on('click', function () {
-        const {id} = this.dataset;
-        location.assign(`probleminfo.html?id=${id}`);
+        const {id, content} = this.dataset;
+        location.assign(`probleminfo.html?id=${id}&content=${content}`);
     });
 
     // 切换分页按钮事件
@@ -106,9 +106,9 @@ window.onload = function () {
         for(const v of issue) {
             const mode = `
             <div class="item">
-                <div class="text">${v.question || '' }</div>
+                <div class="text">${v.question || ''}</div>
                 <div class="button">
-                    <button type="button" class="check" data-id="${v.id || ''}">查看</button>
+                    <button type="button" class="check" data-id="${v.id || ''}" data-content="${v.question || ''}">查看</button>
                 </div>
             </div>
             `;
@@ -116,8 +116,8 @@ window.onload = function () {
         }
 
         $('.check').on('click', function () {
-            const {id} = this.dataset;
-            location.assign(`probleminfo.html?id=${id}`);
+            const {id, content} = this.dataset;
+            location.assign(`probleminfo.html?id=${id}&content=${content}`);
         });
     }
 
