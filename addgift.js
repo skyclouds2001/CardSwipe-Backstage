@@ -97,11 +97,11 @@ window.onload = function() {
         // 判断文件存在并保存
         $('#imgUp').change((e) => {
             const file = e.target.files[0];
+            let imgObj = {};
 
             if(file) {
                 imgObj = file;
             } else {
-                alert('请选择图片文件!');
                 return;
             }
 
@@ -109,6 +109,7 @@ window.onload = function() {
             let formdata = new FormData();
             formdata.append('file', file);
             formdata.append('name', file.name);
+
             $.ajax({
                 url: 'https://www.yangxiangrui.xyz:9092/eduoss/fileoss',
                 type: 'POST',
@@ -116,13 +117,15 @@ window.onload = function() {
                 data: formdata,
                 contentType: false,
                 processData: false,
+
                 success: (e) => {
                     if(e.success) {
                         const {url} = e.data;
                         imgurl = url;
 
                         $('.img_box > img').attr('src', imgurl);
-                        $('.img_box').css('display', 'block');
+                        $('.img_box').css('display', 'flex');
+                        $('.info_box').css('display', 'none');
 
                         alert('图片上传成功！');
                     } else {
@@ -130,11 +133,13 @@ window.onload = function() {
                         return;
                     }
                 }
+
             });
+
         })
     });
 
-    // button提交表单及图片
+    // button提交表单
     $('#update_single').on('click', function () {
         // 获取表单各内容
         const obj = {
@@ -156,6 +161,8 @@ window.onload = function() {
                 const res = JSON.parse(this.responseText);
                 if(res.success) {
                     alert('提交成功！');
+
+                    location.assign('managegift.html');
                 } else {
                     alert(res.message);
                 }
@@ -165,5 +172,15 @@ window.onload = function() {
         request.open('POST', 'https://www.yangxiangrui.xyz:9092/gift/gift/addGift', true);
         request.setRequestHeader('Content-Type', 'application/json');
         request.send(JSON.stringify(obj));
+    });
+
+    // 删除图片
+    $('#del-img').on('click', function () {
+        $('.img_box > img').attr('src', '');
+        $('.img_box').css('display', 'none');
+        $('.info_box').css('display', 'flex');
+        imgurl = '';
+
+        alert('删除成功！');
     });
 }
