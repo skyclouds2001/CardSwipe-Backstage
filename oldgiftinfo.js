@@ -31,6 +31,7 @@ window.onload = function () {
         // 判断文件存在并保存
         $('#imgUp').change((e) => {
             const file = e.target.files[0];
+            let imgObj = {};
 
             if(file) {
                 imgObj = file;
@@ -91,6 +92,8 @@ window.onload = function () {
                 const res = JSON.parse(this.responseText);
                 if(res.success) {
                     alert('提交成功！');
+
+                    location.assign('managegift.html');
                 } else {
                     alert(res.message);
                 }
