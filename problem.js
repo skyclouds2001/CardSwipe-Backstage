@@ -84,7 +84,8 @@ window.onload = function () {
         request.onreadystatechange = function() {
             if(this.readyState === 4) {
                 const res = JSON.parse(this.responseText);
-                setProblemList(res.data['questionList:']);
+                console.log(res);
+                // setProblemList(res.data['questionList:']);
             }
         }
 
@@ -105,12 +106,16 @@ window.onload = function () {
 
         for(const v of issue) {
             const mode = `
-            <div class="item">
-                <div class="text">${v.question || ''}</div>
-                <div class="button">
-                    <button type="button" class="check" data-id="${v.id || ''}" data-content="${v.question || ''}">查看</button>
+                <div class="item">
+                    <div class="item-icon">
+                        <img src="./img/gift.png">
+                    </div>
+                    <div class="item-name">lilillllllllllllllllllll</div>
+                    <div class="item-time">2022/2/5 14:26:45</div>
+                    <div class="item-btn">
+                        <button type="button" class="check" data-id="1" data-content="1">查看</button>
+                    </div>
                 </div>
-            </div>
             `;
             $('.content').append(mode);
         }
