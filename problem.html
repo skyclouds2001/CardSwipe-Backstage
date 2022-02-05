@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>问题反馈</title>
 
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="normalize.css">
@@ -33,14 +33,19 @@
 
         <!-- 导航条 -->
         <div class="navigator">
-            <div>未处理</div>
-            <div>已处理</div>
+            <div id="unchecked">未处理</div>
+            <div id="checked">已处理</div>
         </div>
 
         <!-- 问题内容区 -->
         <div class="content">
-            <div class="list-head"></div>
-            <div class="list-content"></div>
+        </div>
+
+        <!-- 切页部分 -->
+        <div class="jumpPage">
+            <button type="button" id="preview">上一页</button>
+            <button type="button" id="current" disabled>第1页</button>
+            <button type="button" id="next">下一页</button>
         </div>
 
     </div>
