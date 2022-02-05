@@ -129,8 +129,7 @@ window.onload = function () {
             getGift(url_new, page_new);
 
             $('#current').text(`第${page_new}页`);
-        }
-        if(STATE === 0 && page_old + flag > 0) {
+        } else if (STATE === 0 && page_old + flag > 0) {
             page_old += flag;
 
             getGift(url_old, page_old);
