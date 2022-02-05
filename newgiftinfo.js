@@ -113,4 +113,9 @@ window.onload = function () {
     $('#modify').on('click', function () {
         location.assign(`oldgiftinfo.html?id=${id}`);
     });
+
+    // 返回按钮事件
+    $('.return-icon').on('click', function () {
+        location.assign('managegift.html');
+    });
 };
