@@ -11,7 +11,7 @@
     flex: 3;
 
     width: 100%;
-    min-height: 1.5em;
+    min-height: 2em;
     padding: 15px;
 
     background-color: var(--theme-color-thin-grey);
@@ -24,10 +24,14 @@
 }
 .navigator > div {
     width: 40%;
+    height: 2em;
 
-    line-height: 1.5em;
+    line-height: 2em;
     text-align: center;
     color: white;
+
+    user-select: none;
+    cursor: pointer;
 }
 .new-gift {
     background-color: var(--theme-color-thin-blue);
@@ -81,7 +85,10 @@
     font-size: 18px;
 
     color: var(--theme-color-thick-blue);
+
+    cursor: pointer;
 }
+
 .search-text {
     color: var(--theme-color-thin-blue);
     font-size: 18px;
@@ -93,6 +100,10 @@
 
     line-height: 1.5em;
     text-align: center;
+}
+
+.search-text > div {
+    user-select: none;
 }
 
 .search-input > div {
@@ -121,11 +132,13 @@
 }
 .search-icon {
     position: absolute;
-    left: 4px;
+    left: 5px;
 
     font-weight: bold;
     color: var(--theme-color-thin-grey);
     text-shadow: 0 0 5px var(--theme-color-thick-grey);
+
+    cursor: pointer;
 }
 .search-value::placeholder {
     color: var(--theme-color-thin-blue);
@@ -165,6 +178,8 @@
     font-size: 15px;
 
     height: 3em;
+
+    user-select: none;
 }
 
 .list-content {
@@ -189,6 +204,8 @@
     padding: 5px 10px;
 
     overflow: hidden;
+
+    user-select: none;
 }
 .list-item img {
     width: 90%;
@@ -197,6 +214,10 @@
 .list-item button {
     width: 4em;
     height: 2em;
+    background-color: #ccc;
+
+    border: none;
+    outline: none;
 
     line-height: 2em;
     text-align: center;
