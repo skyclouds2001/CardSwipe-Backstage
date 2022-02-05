@@ -12,9 +12,13 @@ window.onload = function () {
                 const res = JSON.parse(this.responseText);
                 if(res.success) {
                     alert('登录成功！');
+
                     location.assign('menu.html');
                 } else {
                     alert(res.message);
+
+                    $('#ac').val('');
+                    $('#pw').val('');
                 }
             }
         }
