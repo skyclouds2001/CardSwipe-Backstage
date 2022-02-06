@@ -79,6 +79,8 @@ window.onload = function() {
             success: (e) => {
                 if(e.success) {
                     alert('上传成功！');
+
+                    location.assign('menu.html');
                 } else {
                     alert('上传失败\n请稍后再试');
                 }
@@ -162,7 +164,7 @@ window.onload = function() {
                 if(res.success) {
                     alert('提交成功！');
 
-                    location.assign('managegift.html');
+                    location.assign('menu.html');
                 } else {
                     alert(res.message);
                 }
