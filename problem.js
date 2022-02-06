@@ -91,7 +91,7 @@ window.onload = function () {
 
         request.open('GET', url, true);
 
-        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        request.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
 
         request.send({
             page: PAGE ? ePage : uPage
