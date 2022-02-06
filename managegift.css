@@ -122,6 +122,7 @@
 
     border-radius: 5px;
     padding: 0px 20px;
+    padding-left: 25px;
 
     font-size: 15px;
 
@@ -159,6 +160,7 @@
     overflow: auto;
 }
 
+/* 页面表头 */
 .list-head {
     background-color: var(--theme-color-thin-pink);
 
@@ -182,6 +184,7 @@
     user-select: none;
 }
 
+/* 页面内容 */
 .list-content {
     width: 100%;
 }
@@ -218,17 +221,22 @@
 
     border: none;
     outline: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 3px 0px #ccc;
 
     line-height: 2em;
     text-align: center;
 }
 
+/* 页面跳转按钮 */
 .list-choose-page {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 
     width: 100%;
+
+    margin: 25px 0px;
 }
 .list-choose-page > button {
     width: 5em;
