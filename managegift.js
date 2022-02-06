@@ -11,6 +11,8 @@ window.onload = function () {
     // 请求url
     let url_old = 'https://www.yangxiangrui.xyz:9092/gift/admin/examinedGift';
     let url_new = 'https://www.yangxiangrui.xyz:9092/gift/admin/unexaminedGift';
+    // 记录礼物信息
+    let gift_info = null;
 
     // 返回图标事件处理
     $('#return').on('click', function () {
@@ -70,6 +72,8 @@ window.onload = function () {
     // 渲染礼物
     //      渲染完成后会自动给按钮图片添加事件处理函数
     function setGift(gift) {
+        gift_info = gift;
+
         $('#content').empty();
 
         let str = '';
@@ -94,9 +98,6 @@ window.onload = function () {
         setImgError();
         setButtonClick();
     }
-
-    // 初始渲染
-    getGift(url_new, page_new);
 
     // 图片加载失败处理
     function setImgError () {
@@ -137,4 +138,26 @@ window.onload = function () {
             $('#current').text(`第${page_old}页`);
         }
     }
+
+    // 导航栏搜索事件
+    $('.search-value').on('blur', () => {
+        const value = $('.search-value').val().trim();
+        const gift = gift_info;
+        let gift0 = [];
+
+        if (gift && value) {
+            gift.forEach((v) => {
+                const str = v.title;
+
+                if(str.indexOf(value) !== -1) {
+                    gift0.push(v);
+                }
+            });
+
+            setGift(gift0);
+        }
+    });
+
+    // 初始渲染
+    getGift(url_new, page_new);
 };
