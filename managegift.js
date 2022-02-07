@@ -1,16 +1,14 @@
 "use strict";
 
 window.onload = function () {
-    // 记录当前分页
-    //      1代表新上传礼物（初始值）
-    //      0代表过往礼物
+    // 记录当前分页：1代表新上传礼物（初始值）；0代表过往礼物
     let STATE = 1;
     // 记录页数
     let page_new = 1;
     let page_old = 1;
     // 请求url
-    let url_old = 'https://www.yangxiangrui.xyz:9092/gift/admin/examinedGift';
-    let url_new = 'https://www.yangxiangrui.xyz:9092/gift/admin/unexaminedGift';
+    const url_old = 'https://www.yangxiangrui.xyz:9092/gift/admin/examinedGift';
+    const url_new = 'https://www.yangxiangrui.xyz:9092/gift/admin/unexaminedGift';
     // 记录礼物信息
     let gift_info = null;
 
@@ -52,32 +50,36 @@ window.onload = function () {
         getGift(url_old, page);
     });
 
-    // 获取礼物
-    //      成功获取后会调用渲染函数
+    // 获取礼物：成功获取后会调用渲染函数
     function getGift(url, page) {
         let request = new XMLHttpRequest();
+
         request.onreadystatechange = function() {
             if(this.readyState === 4) {
                 const res = JSON.parse(this.responseText);
-                setGift(res.data['giftList:']);
+
+                const gift = res.data['giftList:'];
+                gift_info = gift;
+
+                setGift(gift);
             }
         }
+
         request.open('GET', url + '/' + page, true);
+
         request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
         request.send({
             page: page
         });
     }
 
-    // 渲染礼物
-    //      渲染完成后会自动给按钮图片添加事件处理函数
+    // 渲染礼物：渲染完成后会自动给按钮图片添加事件处理函数
     function setGift(gift) {
-        gift_info = gift;
-
         $('#content').empty();
 
-        let str = '';
         for (const v of gift) {
+
             const mode = `
                 <div class="list-item">
                     <div class="list-item-name">${v.title ? v.title : ' '}</div>
@@ -90,10 +92,9 @@ window.onload = function () {
                     </div>
                 </div>
             `;
-            str += mode;
-        }
 
-        $('#content').append(str);
+            $('#content').append(mode);
+        }
 
         setImgError();
         setButtonClick();
@@ -122,7 +123,6 @@ window.onload = function () {
     $('#next').on('click', function () {
         setPage(1);
     });
-
     function setPage(flag) {
         if(STATE === 1 && page_new + flag > 0) {
             page_new += flag;
@@ -143,9 +143,11 @@ window.onload = function () {
     $('.search-value').on('blur', () => {
         const value = $('.search-value').val().trim();
         const gift = gift_info;
-        let gift0 = [];
 
         if (gift && value) {
+
+            let gift0 = [];
+
             gift.forEach((v) => {
                 const str = v.title;
 
@@ -155,6 +157,8 @@ window.onload = function () {
             });
 
             setGift(gift0);
+        } else {
+            setGift(gift);
         }
     });
 
