@@ -85,7 +85,7 @@ window.onload = function () {
             if(this.readyState === 4) {
                 const res = JSON.parse(this.responseText);
                 console.log(res);
-                // setProblemList(res.data['questionList:']);
+                setProblemList(res.data['questionList:']);
             }
         }
 
@@ -96,7 +96,7 @@ window.onload = function () {
         request.send({
             page: PAGE ? ePage : uPage
         });
-    }
+    };
 
     // 渲染页面数据
     function setProblemList(issue) {
@@ -108,12 +108,12 @@ window.onload = function () {
             const mode = `
                 <div class="item">
                     <div class="item-icon">
-                        <img src="./img/gift.png">
+                        <img src="${v.url ?? './img/gift.png'}">
                     </div>
-                    <div class="item-name">lilillllllllllllllllllll</div>
-                    <div class="item-time">2022/2/5 14:26:45</div>
+                    <div class="item-name">${v.name ?? '无'}</div>
+                    <div class="item-time">${v.insertTime ?? '无'}</div>
                     <div class="item-btn">
-                        <button type="button" class="check" data-id="1" data-content="1">查看</button>
+                        <button type="button" class="check" data-id="${v.id}" data-content="${v.question ?? '无'}">查看</button>
                     </div>
                 </div>
             `;
@@ -124,7 +124,11 @@ window.onload = function () {
             const {id, content} = this.dataset;
             location.assign(`probleminfo.html?id=${id}&content=${content}`);
         });
-    }
+
+        $('img').on('error', function () {
+            $(this).attr('src', './img/gift.png');
+        });
+    };
 
     getProblemList();
 };
