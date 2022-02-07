@@ -84,7 +84,9 @@ window.onload = function () {
         request.onreadystatechange = function() {
             if(this.readyState === 4) {
                 const res = JSON.parse(this.responseText);
+
                 console.log(res);
+
                 setProblemList(res.data['questionList:']);
             }
         }
@@ -102,7 +104,7 @@ window.onload = function () {
     function setProblemList(issue) {
         pageSize = issue.length;
 
-        $('.content').empty();
+        $('.list-content').empty();
 
         for(const v of issue) {
             const mode = `
@@ -117,11 +119,12 @@ window.onload = function () {
                     </div>
                 </div>
             `;
-            $('.content').append(mode);
+            $('.list-content').append(mode);
         }
 
         $('.check').on('click', function () {
             const {id, content} = this.dataset;
+
             location.assign(`probleminfo.html?id=${id}&content=${content}`);
         });
 
