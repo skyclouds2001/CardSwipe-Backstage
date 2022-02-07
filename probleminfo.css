@@ -25,6 +25,8 @@
 .nav-text {
     letter-spacing: 0.1em;
     font-size: 20px;
+
+    user-select: none;
 }
 .return-icon {
     position: absolute;
@@ -62,6 +64,7 @@
     word-wrap: break-word;
 
     box-shadow: 0px 0px 5px #ccc inset;
+    border-radius: 5px;
 }
 
 /* 处理按钮 */
