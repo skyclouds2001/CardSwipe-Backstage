@@ -10,11 +10,13 @@
 function getQueryVariable (variable) {
     var query = window.location.search.substring(1);
     var vars = query.split("&");
-    for (var i=0;i<vars.length;i++) {
+    for (var i = 0; i < vars.length; i++) {
             var pair = vars[i].split("=");
-            if(pair[0] == variable){return pair[1];}
+            if(pair[0] == variable){
+                return pair[1];
+            }
     }
-    return(false);
+    return false;
 }
 
 window.onload = function () {
@@ -31,13 +33,14 @@ window.onload = function () {
         request.onreadystatechange = function() {
             if(this.readyState === 4) {
                 const res = JSON.parse(this.responseText);
+
                 if(res.success) {
                     alert('操作成功！');
-
                     location.assign('problem.html');
                 } else {
                     alert('操作失败！\n请稍后再试');
                 }
+                
             }
         }
 
