@@ -1,11 +1,24 @@
 # cardswipe-backstage
-The project is used for managing wexin miniprograme named CardSwipe.
 
+## Project setup
+```
+npm install
+```
 
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
 
-The project use HTML, CSS, and JavaScript programming language.
+### Compiles and minifies for production
+```
+npm run build
+```
 
+### Lints and fixes files
+```
+npm run lint
+```
 
-
-The project is based on jQuery lab. 
-
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
